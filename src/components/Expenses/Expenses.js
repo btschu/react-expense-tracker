@@ -1,9 +1,11 @@
 import "./Expenses.css";
 import ExpenseItem from './ExpenseItem'
+import ExpensesFilter from './ExpensesFilter'
 
 const Expenses = (props) => {
   return (
     <div className="expenses">
+      <ExpensesFilter />
       <ExpenseItem
         title={props.expenses[0].title}
         amount={props.expenses[0].amount}
