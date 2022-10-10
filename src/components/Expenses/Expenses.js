@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import "./Expenses.css";
 import ExpenseItem from './ExpenseItem'
 import ExpensesFilter from './ExpensesFilter'
@@ -12,7 +12,7 @@ const Expenses = (props) => {
 
   return (
     <div className="expenses">
-      <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler}/>
+      <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
       <ExpenseItem
         title={props.expenses[0].title}
         amount={props.expenses[0].amount}

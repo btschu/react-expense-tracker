@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./ExpenseForm.css";
 
 const ExpenseForm = (props) => {
-// Using state multiple times
+  // Using state multiple times
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
@@ -16,9 +16,9 @@ const ExpenseForm = (props) => {
   const dateChangeHandler = (event) => {
     setEnteredDate(event.target.value);
   };
-// End of using state multiple times
+  // End of using state multiple times
 
-// Using state once
+  // Using state once
   // const [userInput, setUserInput] = state({
   //   enteredTitle: '',
   //   enteredAmount: '',
@@ -40,9 +40,9 @@ const ExpenseForm = (props) => {
   //     return { ...prevState, enteredDate: event.target.value}
   //   }
   // }
-// end of Using state once
+  // end of Using state once
 
-const submitHandler = (event) => {
+  const submitHandler = (event) => {
     // prevents the page from reloading on submit
     event.preventDefault();
 
@@ -54,7 +54,7 @@ const submitHandler = (event) => {
     };
 
     console.log(expenseData);
-    
+
     // execute function from NewExpense.js
     props.onSaveExpenseData(expenseData);
 
