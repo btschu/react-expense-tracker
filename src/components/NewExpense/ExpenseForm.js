@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./ExpenseForm.css";
 
 const ExpenseForm = (props) => {
+// Using state multiple times
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
@@ -15,17 +16,49 @@ const ExpenseForm = (props) => {
   const dateChangeHandler = (event) => {
     setEnteredDate(event.target.value);
   };
+// End of using state multiple times
 
-  const submitHandler = (event) => {
+// Using state once
+  // const [userInput, setUserInput] = state({
+  //   enteredTitle: '',
+  //   enteredAmount: '',
+  //   enteredDate: '',
+  // })
+
+  // const titleChangeHandler = (event) => {
+  //   setUserInput = (prevState) => {
+  //     return { ...prevState, enteredTitle: event.target.value}
+  //   }
+  // }
+  // const amountChangeHandler = (event) => {
+  //   setUserInput = (prevState) => {
+  //     return { ...prevState, enteredAmount: event.target.value}
+  //   }
+  // }
+  // const dateChangeHandler = (event) => {
+  //   setUserInput = (prevState) => {
+  //     return { ...prevState, enteredDate: event.target.value}
+  //   }
+  // }
+// end of Using state once
+
+const submitHandler = (event) => {
+    // prevents the page from reloading on submit
     event.preventDefault();
 
+    // create an expense data object **this object is not needed when using the single state method above**
     const expenseData = {
       title: enteredTitle,
       amount: enteredAmount,
       date: new Date(enteredDate),
     };
 
+    console.log(expenseData);
+    
+    // execute function from NewExpense.js
     props.onSaveExpenseData(expenseData);
+
+    // clears form after user hits submit
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
